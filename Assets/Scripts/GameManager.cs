@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI gameOverText;
-    public static int coinAmount;
     [SerializeField] private GameObject restartButton;
+    public static int coinAmount;
     private void Awake()
     {
         gameOverText.gameObject.SetActive(false);
@@ -32,5 +33,6 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
