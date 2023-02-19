@@ -6,6 +6,7 @@ public class ArrowMovement : MonoBehaviour
 {
     Rigidbody arrowRB;
     [SerializeField] private float arrowSpeed;
+    [SerializeField] private Transform startPoint;
     GameManager gameManager;
     void Start()
     {
@@ -29,5 +30,9 @@ public class ArrowMovement : MonoBehaviour
         {
             gameManager.GameOver();
         }
+    }
+    public void ResetPosition()
+    {
+        transform.position = startPoint.transform.position;
     }
 }

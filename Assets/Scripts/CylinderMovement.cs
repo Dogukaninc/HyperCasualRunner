@@ -5,6 +5,11 @@ using UnityEngine;
 public class CylinderMovement : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
+    GameManager gameManager;
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     void Update()
     {
         //KeyBoardMovement();

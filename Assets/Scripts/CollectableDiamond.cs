@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CollectableDiamond : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed;
+    //[SerializeField] private float rotationSpeed;
     void Update()
     {
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        //transform.localRotation = Quaternion.Euler(Vector3.right * rotationSpeed * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
     {
