@@ -6,17 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI gameStuationText;
-    [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject finalPanel;
+    public int levelIndex = 0;
     public static int coinAmount;
     public bool isGameFinished = false;
     ArrowMovement arrowRef;
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+
         arrowRef = FindObjectOfType<ArrowMovement>();
         gameStuationText.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
+        finalPanel.gameObject.SetActive(false);
     }
     void Start()
     {
@@ -30,32 +42,21 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0f;
-        gameStuationText.gameObject.SetActive(true);
         gameStuationText.text = "Game Over!!!";
-        restartButton.gameObject.SetActive(true);
+        finalPanel.gameObject.SetActive(true);
     }
     public void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         isGameFinished = false;
+        finalPanel.gameObject.SetActive(false);
     }
     public void GameFinish()
     {
-        gameStuationText.gameObject.SetActive(true);
         gameStuationText.text = "Win!!!";
+        finalPanel.gameObject.SetActive(true);
         arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        gameStuationText.gameObject.SetActive(false);
-        arrowRef.ResetPosition();
-        arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        //StartCoroutine(LoadNextCylinderDelay());
+        levelIndex++;
     }
-    /*
-    IEnumerator LoadNextCylinderDelay()
-    {
-        yield return new WaitForSeconds(5);
-        arrowRef.ResetPosition();
-        isGameFinished = true;
-        arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-    }*/
 }

@@ -13,7 +13,7 @@ public class CylinderMovement : MonoBehaviour
     void Update()
     {
         //KeyBoardMovement();
-        if (Input.touchCount == 1)
+        if (Input.touchCount > 0)
         {
             Touch screenTouch = Input.GetTouch(0);
             if (screenTouch.phase == TouchPhase.Moved)
