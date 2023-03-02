@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI gameStuationText;
     [SerializeField] private GameObject finalPanel;
+    [SerializeField] private Transform startPos;
     public int levelIndex = 0;
     public static int coinAmount;
     public bool isGameFinished = false;
@@ -54,9 +55,20 @@ public class GameManager : MonoBehaviour
     }
     public void GameFinish()
     {
+        arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        StartCoroutine(EndGameDelay());
+    }
+    IEnumerator EndGameDelay()
+    {
+        yield return new WaitForSeconds(2f);
         gameStuationText.text = "Win!!!";
         finalPanel.gameObject.SetActive(true);
-        arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        levelIndex++;
+    }
+    public void LoadNextLevel()
+    {
+        levelIndex += 1;
+        arrowRef.gameObject.GetComponent<ArrowMovement>().transform.position = startPos.transform.position;
+        arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        finalPanel.gameObject.SetActive(false);
     }
 }
