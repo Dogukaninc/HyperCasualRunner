@@ -10,6 +10,9 @@ public class BreakableObstacle : MonoBehaviour
         if (other.gameObject.CompareTag("Arrow"))
         {
             Instantiate(breakableObsPrefab, transform.position, Quaternion.identity);
+
+            AudioManager.instance.Play("BreakableObs");
+            //FindObjectOfType<AudioManager>().Play("BreakableObs");
             Destroy(this.gameObject);
         }
     }

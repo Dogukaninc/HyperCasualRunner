@@ -14,6 +14,7 @@ public class CollectableDiamond : MonoBehaviour
         if (other.gameObject.CompareTag("Arrow"))
         {
             GameManager.coinAmount++;
+            AudioManager.instance.Play("Diamond");
             Destroy(this.gameObject);
         }
     }

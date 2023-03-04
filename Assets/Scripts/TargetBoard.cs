@@ -10,6 +10,7 @@ public class TargetBoard : MonoBehaviour
         if (other.gameObject.CompareTag("Arrow"))
         {
             Instantiate(brokenBoard, transform.position, Quaternion.identity);
+            AudioManager.instance.Play("BreakableObs");
             Destroy(this.gameObject);
         }
     }
