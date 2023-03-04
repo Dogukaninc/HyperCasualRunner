@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class RollerManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> rollers = new List<GameObject>();
-    //[SerializeField] private GameObject[] rollerPrefab;
-    GameManager gameManager;
-    void Start()
+    public List<GameObject> rollers = new List<GameObject>();
+    public List<GameObject> totalRollers = new List<GameObject>();
+    public int index = 0;
+    public Transform startPos;
+    public GameObject scoreBoard;
+    ArrowMovement arrowMovement;
+    private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        GameObject temp = Instantiate(rollers[index], transform.position, Quaternion.identity);
+        totalRollers.Add(temp);
     }
-    void Update()
+    private void Start()
     {
-        if (gameManager.levelIndex == 1)//OYUN BÝTÝNCE SONRAKÝ LEVEL BUTONUNA BASINCA YENÝ ROLL YÜKLENECEK
+        arrowMovement = FindObjectOfType<ArrowMovement>();
+    }
+    public void LoadNextLevel()
+    {
+        GameObject rollerTemp = Instantiate(rollers[index + 1], transform.position, Quaternion.identity);
+        index++;
+        totalRollers.Add(rollerTemp);
+        if (totalRollers.Count > 1)//listeden önceki seviyeyi siliyor
         {
-            Instantiate(rollers[0], transform.position, Quaternion.identity);
-            gameManager.levelIndex = 2;
+            Destroy(totalRollers[totalRollers.Count - 2]);
         }
+        arrowMovement.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        scoreBoard.SetActive(false);
+        arrowMovement.GetComponent<Transform>().transform.position = startPos.position;
     }
 }

@@ -29,5 +29,9 @@ public class ArrowMovement : MonoBehaviour
         {
             gameManager.GameOver();
         }
+        if (collision.gameObject.CompareTag("Part"))
+        {
+            collision.gameObject.GetComponent<Collider>().isTrigger = true;
+        }
     }
 }

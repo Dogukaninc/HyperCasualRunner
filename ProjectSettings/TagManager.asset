@@ -8,6 +8,7 @@ TagManager:
   - Diamond
   - FinishLine
   - CirclePart
+  - Part
   layers:
   - Default
   - TransparentFX

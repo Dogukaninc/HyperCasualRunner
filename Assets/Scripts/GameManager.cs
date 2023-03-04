@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameStuationText;
     [SerializeField] private GameObject finalPanel;
     [SerializeField] private Transform startPos;
-    public int levelIndex = 0;
+    
     public static int coinAmount;
     public bool isGameFinished = false;
     ArrowMovement arrowRef;
@@ -64,11 +64,5 @@ public class GameManager : MonoBehaviour
         gameStuationText.text = "Win!!!";
         finalPanel.gameObject.SetActive(true);
     }
-    public void LoadNextLevel()
-    {
-        levelIndex += 1;
-        arrowRef.gameObject.GetComponent<ArrowMovement>().transform.position = startPos.transform.position;
-        arrowRef.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        finalPanel.gameObject.SetActive(false);
-    }
+    
 }
