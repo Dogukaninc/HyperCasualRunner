@@ -33,10 +33,6 @@ public class AudioManager : MonoBehaviour
             s.audioSource.playOnAwake = s.playOnAwake;
         }
     }
-    private void Start()
-    {
-        Play("MainTheme");
-    }
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -48,6 +44,4 @@ public class AudioManager : MonoBehaviour
         }
         s.audioSource.Play();
     }
-
-
 }
