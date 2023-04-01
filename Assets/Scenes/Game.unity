@@ -1839,7 +1839,7 @@ MonoBehaviour:
   weaponCostScript: {fileID: 11400000, guid: da388c8267b5a834c8726e21788017c4, type: 2}
   isItemSold: 0
   isItemEquipped: 0
-  coinAmount: 0
+  _weaponCost: 0
 --- !u!1 &767731680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +1871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diamondText: {fileID: 1665511196}
   gameStuationText: {fileID: 913464361}
+  totalCollectedGemText: {fileID: 872135134}
   finalPanel: {fileID: 678564000}
   startPos: {fileID: 1224343053}
   isGameFinished: 0
@@ -3286,7 +3287,6 @@ MonoBehaviour:
   equipButton: {fileID: 1937708756}
   weaponTypeHolder: {fileID: 0}
   weaponCostText: {fileID: 190108529}
-  totalCollectedGemText: {fileID: 872135134}
   menuPanel: {fileID: 33784141}
   menuAudioSource: {fileID: 1833785454}
   audioButton: {fileID: 340785180}
@@ -4486,7 +4486,7 @@ MonoBehaviour:
   weaponCostScript: {fileID: 11400000, guid: 39e2e4cebd48bc041866f8909a95a3fc, type: 2}
   isItemSold: 0
   isItemEquipped: 0
-  coinAmount: 0
+  _weaponCost: 0
 --- !u!23 &2583613946953337802
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5166,7 +5166,7 @@ MonoBehaviour:
   weaponCostScript: {fileID: 11400000, guid: 543f125714351c248a2cfa6eb1c35a4f, type: 2}
   isItemSold: 0
   isItemEquipped: 0
-  coinAmount: 0
+  _weaponCost: 0
 --- !u!4 &9198203365365336024
 Transform:
   m_ObjectHideFlags: 0
@@ -5197,4 +5197,4 @@ MonoBehaviour:
   weaponCostScript: {fileID: 11400000, guid: ddf2d7200f06da94a90a6bda2edb7810, type: 2}
   isItemSold: 0
   isItemEquipped: 0
-  coinAmount: 0
+  _weaponCost: 0

@@ -12,10 +12,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI gameStuationText;
+    [SerializeField] private TextMeshProUGUI totalCollectedGemText;
+
     [SerializeField] private GameObject finalPanel;
     [SerializeField] private Transform startPos;
 
-    public static int coinAmount;
+    [SerializeField] public static int coinAmount;
     public bool isGameFinished = false;
     ArrowMovement arrowRef;
     private void Awake()
@@ -35,15 +37,17 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        //coinAmount = 0;
+        coinAmount = 4;
         diamondText.text = coinAmount.ToString();
     }
     void Update()
     {
+        totalCollectedGemText.text = coinAmount.ToString();
+
         diamondText.text = coinAmount.ToString();
         if (coinAmount < 1)
         {
-            coinAmount = 0;
+           coinAmount = 0;
         }
     }
     public void GameOver()

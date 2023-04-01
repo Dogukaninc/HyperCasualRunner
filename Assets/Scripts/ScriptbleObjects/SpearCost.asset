@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0627e4d4fab74cf46b6f724ef06f30ca, type: 3}
   m_Name: SpearCost
   m_EditorClassIdentifier: 
-  weaponName: Spear
   weaponCost: 6
+  itemSold: 0
+  itemEquipped: 0

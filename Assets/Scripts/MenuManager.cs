@@ -7,17 +7,14 @@ using DG.Tweening;
 
 public class MenuManager : MonoBehaviour
 {
-    public int gunCount = 0;
+    [SerializeField] private int gunCount = 0;
     public List<GameObject> weapons = new List<GameObject>();
     public Button buyButton, equipButton;
     [HideInInspector] public WeaponTypeHolder weaponTypeHolder;
     private float uiSliderValue = 0f;
     public TextMeshProUGUI weaponCostText;
-    public TextMeshProUGUI totalCollectedGemText;
 
-    private bool _isItemSold;
     //[SerializeField] private bool itemEquippedAlready = false;
-
     //public int weaponPrice;
     //private GameManager gameManager;
     [SerializeField] private GameObject menuPanel;
@@ -37,8 +34,7 @@ public class MenuManager : MonoBehaviour
     }
     private void Update()
     {
-        weaponCostText.text = "x " + weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().coinAmount.ToString();
-        totalCollectedGemText.text = GameManager.coinAmount.ToString();
+        weaponCostText.text = "x " + weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>()._weaponCost.ToString();
 
 
         if (weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold == true)
@@ -72,9 +68,15 @@ public class MenuManager : MonoBehaviour
     }
     public void StartGame()
     {
-        menuPanel.SetActive(false);
+        for (int i = 0; i <= gunCount; i++)
+        {
+            if (weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemEquipped == true)
+            {
+                menuPanel.SetActive(false);
+                gameCanStart = true;
+            }
+        }
         //Time.timeScale = 1f;
-        gameCanStart = true;
         //cameraCanFollow = true;//KAMERA OKU TAKÝP EDEBÝLÝR
         //mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(0, 0, 0), 4f);
     }
@@ -118,8 +120,6 @@ public class MenuManager : MonoBehaviour
     {
         var itemCheck = weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>();
         //Debug.Log(weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold)
-
-
         if (itemCheck.isItemSold == true)
         {
             if (itemCheck.isItemEquipped == false)
@@ -131,10 +131,11 @@ public class MenuManager : MonoBehaviour
     }
     public void BuyWeaponButton()
     {
-        for (int i = 0; i <= gunCount; i++)
+        var weaponItem = weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>();
+        if (weaponItem._weaponCost <= GameManager.coinAmount)
         {
-            GameManager.coinAmount -= weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().coinAmount;
-            weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold = true;
+            GameManager.coinAmount -= weaponItem._weaponCost;
+            weaponItem.isItemSold = true;
         }
     }
 }

@@ -7,10 +7,10 @@ public class WeaponTypeHolder : MonoBehaviour
     public WeaponsCostSO weaponCostScript;
     public bool isItemSold;
     public bool isItemEquipped;
-    [HideInInspector] public int coinAmount;
+    [HideInInspector] public int _weaponCost;
     private void Awake()
     {
-        coinAmount = weaponCostScript.weaponCost;
+        _weaponCost = weaponCostScript.weaponCost;
         isItemSold = weaponCostScript.itemSold;
         isItemEquipped = weaponCostScript.itemEquipped;
     }
