@@ -14,9 +14,11 @@ public class CameraFollow : MonoBehaviour
     }
     void Update()
     {
+        transform.position = Vector3.Lerp(transform.position, target.position + offSet, camSpeed);
+        /*
         if (menuManager.cameraCanFollow)
         {
-            transform.position = Vector3.Lerp(transform.position, target.position + offSet, camSpeed);
         }
+        */
     }
 }

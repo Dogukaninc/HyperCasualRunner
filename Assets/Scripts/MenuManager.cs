@@ -1,26 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class MenuManager : MonoBehaviour
 {
+    public int gunCount = 0;
+    public List<GameObject> weapons = new List<GameObject>();
+    public Button buyButton, equipButton;
+    [HideInInspector] public WeaponTypeHolder weaponTypeHolder;
+    private float uiSliderValue = 0f;
+    public TextMeshProUGUI weaponCostText;
+    public TextMeshProUGUI totalCollectedGemText;
+
+    private bool _isItemSold;
+    //[SerializeField] private bool itemEquippedAlready = false;
+
+    //public int weaponPrice;
+    //private GameManager gameManager;
     [SerializeField] private GameObject menuPanel;
-    [SerializeField] private AudioSource audioManager;
-    [SerializeField] private GameObject audioButton, rotationTable;
+    [SerializeField] private AudioSource menuAudioSource;
+    [SerializeField] private GameObject audioButton;
+    [SerializeField] private RectTransform shopItemTransform;
     [SerializeField] private Sprite offSprite, onSprite;
-    public bool cameraCanFollow;
+    //public bool cameraCanFollow;
     //[SerializeField] private GameObject mainCamera;
+    public bool gameCanStart = false;
     public bool isOnisOf = false;
     private void Awake()
     {
-        Time.timeScale = 0f;
+        weaponTypeHolder = FindObjectOfType<WeaponTypeHolder>();
+        //gameManager = FindObjectOfType<GameManager>();
+        //Time.timeScale = 0f;
+    }
+    private void Update()
+    {
+        weaponCostText.text = "x " + weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().coinAmount.ToString();
+        totalCollectedGemText.text = GameManager.coinAmount.ToString();
+
+
+        if (weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold == true)
+        {
+            buyButton.interactable = false;
+        }
+        else if (weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold == false)
+        {
+            buyButton.interactable = true;
+        }
+
+        foreach (GameObject weapon in weapons)
+        {
+            var itemCheck2 = weapon.gameObject.GetComponent<WeaponTypeHolder>();
+            if (itemCheck2.isItemSold == false)//eger listedeki obje satin alinmadiysa ve kusanilmadiysa kapat
+            {
+                weapon.gameObject.SetActive(false);
+            }
+            if (weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemEquipped == true)
+            {
+                foreach (GameObject item in weapons)
+                {
+                    if (item.gameObject.GetComponent<WeaponTypeHolder>().isItemEquipped == true && item.gameObject != weapons[gunCount].gameObject)//eger magazada baska bir objeyi satin alip kusandiysak mevcut kusanilan objeyi kapatip yeni kusanilan objeyi yerine koyuyor
+                    {
+                        item.gameObject.GetComponent<WeaponTypeHolder>().isItemEquipped = false;
+                        item.gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
     }
     public void StartGame()
     {
         menuPanel.SetActive(false);
-        Time.timeScale = 1f;
-        cameraCanFollow = true;//KAMERA OKU TAKÝP EDEBÝLÝR
+        //Time.timeScale = 1f;
+        gameCanStart = true;
+        //cameraCanFollow = true;//KAMERA OKU TAKÝP EDEBÝLÝR
         //mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(0, 0, 0), 4f);
     }
     public void ThemeSongOnOff()
@@ -28,22 +83,58 @@ public class MenuManager : MonoBehaviour
         isOnisOf = !isOnisOf;
         if (isOnisOf == true)
         {
-            audioManager.GetComponent<AudioSource>().Stop();
+            menuAudioSource.GetComponent<AudioSource>().Stop();
             audioButton.GetComponent<Image>().sprite = offSprite;
         }
         if (isOnisOf == false)
         {
-            audioManager.GetComponent<AudioSource>().Play();
+            menuAudioSource.GetComponent<AudioSource>().Play();
             audioButton.GetComponent<Image>().sprite = onSprite;
         }
     }
     public void NextObjectRight()
     {
-        rotationTable.transform.position += new Vector3(- 3f, 0, 0);
+        if (gunCount < 3)
+        {
+            //rotationTable.transform.position += new Vector3(-3f, 0, 0);
+            //shopItemTransform.anchoredPosition += new Vector2(-900f, 0);
+            uiSliderValue += 900;
+            shopItemTransform.DOAnchorPosX(-uiSliderValue, 1f);
+            gunCount++;
+        }
     }
     public void NextObjectLeft()
     {
-        rotationTable.transform.position += new Vector3(3f, 0, 0);
+        if (gunCount > 0)
+        {
+            //rotationTable.transform.position += new Vector3(3f, 0, 0);
+            //shopItemTransform.anchoredPosition += new Vector2(900f, 0);
+            uiSliderValue -= 900;
+            shopItemTransform.DOAnchorPosX(-uiSliderValue, 1f);
+            gunCount--;
+        }
     }
-    
+    public void EquipWeapon()
+    {
+        var itemCheck = weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>();
+        //Debug.Log(weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold)
+
+
+        if (itemCheck.isItemSold == true)
+        {
+            if (itemCheck.isItemEquipped == false)
+            {
+                weapons[gunCount].gameObject.SetActive(true);
+                itemCheck.isItemEquipped = true;
+            }
+        }
+    }
+    public void BuyWeaponButton()
+    {
+        for (int i = 0; i <= gunCount; i++)
+        {
+            GameManager.coinAmount -= weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().coinAmount;
+            weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>().isItemSold = true;
+        }
+    }
 }

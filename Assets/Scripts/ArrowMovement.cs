@@ -7,14 +7,19 @@ public class ArrowMovement : MonoBehaviour
     Rigidbody arrowRB;
     [SerializeField] private float arrowSpeed;
     GameManager gameManager;
+    MenuManager menuManager;
     void Start()
     {
+        menuManager = FindObjectOfType<MenuManager>();
         gameManager = FindObjectOfType<GameManager>();
         arrowRB = GetComponent<Rigidbody>();
     }
     void FixedUpdate()
     {
-        arrowRB.velocity = Vector3.forward * arrowSpeed * Time.deltaTime;
+        if (menuManager.gameCanStart)
+        {
+            arrowRB.velocity = Vector3.forward * arrowSpeed * Time.deltaTime;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI gameStuationText;
     [SerializeField] private GameObject finalPanel;
     [SerializeField] private Transform startPos;
-    
+
     public static int coinAmount;
     public bool isGameFinished = false;
     ArrowMovement arrowRef;
@@ -33,12 +35,16 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        coinAmount = 0;
+        //coinAmount = 0;
         diamondText.text = coinAmount.ToString();
     }
     void Update()
     {
         diamondText.text = coinAmount.ToString();
+        if (coinAmount < 1)
+        {
+            coinAmount = 0;
+        }
     }
     public void GameOver()
     {
@@ -64,5 +70,5 @@ public class GameManager : MonoBehaviour
         gameStuationText.text = "Win!!!";
         finalPanel.gameObject.SetActive(true);
     }
-    
+
 }
