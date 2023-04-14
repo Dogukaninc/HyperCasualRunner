@@ -24,6 +24,10 @@ public class RollerManager : MonoBehaviour
         GameObject rollerTemp = Instantiate(rollers[index + 1], transform.position, Quaternion.identity);
         index++;
         totalRollers.Add(rollerTemp);
+
+
+        if (index > 3) return;///ODEV ICIN
+
         if (totalRollers.Count > 1)//listeden önceki seviyeyi siliyor
         {
             Destroy(totalRollers[totalRollers.Count - 2]);
