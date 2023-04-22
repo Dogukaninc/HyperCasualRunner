@@ -97,8 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &677938759626491212
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -209,8 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &1915139681058978466
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -321,8 +317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &4556817529564371695
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -433,8 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &6614581801094702064
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -545,8 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &2499960863790448567
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -901,8 +891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &8082049057280997412
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1489,8 +1477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &8082049058966040296
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1797,8 +1783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &1853628040747318072
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2007,8 +1991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d13682569bfc014ca916927e74d260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 7745355460166272895, guid: fe610cca0a091804da52e203e69c4980,
-    type: 3}
 --- !u!135 &161057524043768706
 SphereCollider:
   m_ObjectHideFlags: 0

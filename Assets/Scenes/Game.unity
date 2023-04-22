@@ -2971,7 +2971,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb27008b6226a443888f7bec99a4c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   rollers: []
+=======
+  rollers:
+  - {fileID: 8082049058147191236, guid: cbcb980291a3d2c4d88d1f3d427884ed, type: 3}
+  - {fileID: 8750769839199907540, guid: 6e92f98fb1fcd6e46b28dd8a1de37c9a, type: 3}
+  - {fileID: 1599192098804049365, guid: b386c7ab118ed894da9e580661d2d21a, type: 3}
+>>>>>>> parent of 1603c22 (homework)
   totalRollers: []
   index: 0
   startPos: {fileID: 0}
