@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI gameStuationText;
     [SerializeField] private TextMeshProUGUI totalCollectedGemText;
+
     [SerializeField] private GameObject finalPanel;
-    [SerializeField] private Button nextLevelButton;
     [SerializeField] private Transform startPos;
 
     [SerializeField] public static int coinAmount;
@@ -48,7 +47,7 @@ public class GameManager : MonoBehaviour
         diamondText.text = coinAmount.ToString();
         if (coinAmount < 1)
         {
-            coinAmount = 0;
+           coinAmount = 0;
         }
     }
     public void GameOver()
@@ -56,7 +55,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gameStuationText.text = "Game Over!!!";
         finalPanel.gameObject.SetActive(true);
-        nextLevelButton.interactable = false; //engele carptiysa bir sonraki seviyeye gecme butonunun etkilesimini kapat
     }
     public void Restart()
     {

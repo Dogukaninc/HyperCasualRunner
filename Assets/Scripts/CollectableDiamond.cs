@@ -8,8 +8,6 @@ public class CollectableDiamond : MonoBehaviour
     void Update()
     {
         //transform.localRotation = Quaternion.Euler(Vector3.right * rotationSpeed * Time.deltaTime);
-
-        //elmaslar kendi ekseni etrafinda donecek
     }
     private void OnTriggerEnter(Collider other)
     {

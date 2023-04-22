@@ -1873,7 +1873,6 @@ MonoBehaviour:
   gameStuationText: {fileID: 913464361}
   totalCollectedGemText: {fileID: 872135134}
   finalPanel: {fileID: 678564000}
-  nextLevelButton: {fileID: 636546769}
   startPos: {fileID: 1224343053}
   isGameFinished: 0
 --- !u!4 &767731682
@@ -3198,7 +3197,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e1cd45fc64fc6634da8a2332b587be16, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -23,5 +23,13 @@ public class CylinderMovement : MonoBehaviour
                 }
             }
         }
+        //KeyBoardMovement();
     }
+    /*
+    private void KeyBoardMovement()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.forward * horizontal);
+    }
+    */
 }
