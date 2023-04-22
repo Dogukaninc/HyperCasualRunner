@@ -26,11 +26,11 @@ public class RollerManager : MonoBehaviour
         totalRollers.Add(rollerTemp);
 
 
-        if (index > 3) return;///ODEV ICIN
+        //if (index > 3) return;///ODEV ICIN
 
-        if (totalRollers.Count > 1)//listeden önceki seviyeyi siliyor
+        if (totalRollers.Count > 1)//listeden önceki seviyeyi kapatiyor
         {
-            Destroy(totalRollers[totalRollers.Count - 2]);
+            totalRollers[totalRollers.Count - 2].gameObject.SetActive(false);
         }
         arrowMovement.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         scoreBoard.SetActive(false);
