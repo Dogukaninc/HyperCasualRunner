@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class RollerManager : MonoBehaviour
 {
-
-    public static RollerManager rmanagerInstance;
-    public List<GameObject> pooledRollers;
-    public GameObject objectToPool;
-    public int amountToPool;
-
-    void Awake()
+    public List<GameObject> rollers = new List<GameObject>();
+    public List<GameObject> totalRollers = new List<GameObject>();
+    public int index = 0;
+    public Transform startPos;
+    public GameObject scoreBoard;
+    ArrowMovement arrowMovement;
+    private void Awake()
     {
-        rmanagerInstance = this;
+        GameObject temp = Instantiate(rollers[index], transform.position, Quaternion.identity);
+        totalRollers.Add(temp);
     }
-
-    void Start()
+    private void Start()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         pooledRollers = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)
 =======
+=======
+>>>>>>> parent of 49c8089 (objectPooling)
         arrowMovement = FindObjectOfType<ArrowMovement>();
     }
     public void LoadNextLevel()
@@ -29,24 +32,21 @@ public class RollerManager : MonoBehaviour
         GameObject rollerTemp = Instantiate(rollers[index + 1], transform.position, Quaternion.identity);
         index++;
         totalRollers.Add(rollerTemp);
+<<<<<<< HEAD
         if (totalRollers.Count > 1)//listeden önceki seviyeyi siliyor
 >>>>>>> parent of 1603c22 (homework)
+=======
+
+
+        if (index > 3) return;///ODEV ICIN
+
+        if (totalRollers.Count > 1)//listeden önceki seviyeyi siliyor
+>>>>>>> parent of 49c8089 (objectPooling)
         {
-            tmp = Instantiate(objectToPool);
-            tmp.SetActive(false);
-            pooledRollers.Add(tmp);
+            Destroy(totalRollers[totalRollers.Count - 2]);
         }
+        arrowMovement.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        scoreBoard.SetActive(false);
+        arrowMovement.GetComponent<Transform>().transform.position = startPos.position;
     }
-    public GameObject GetPooledObject()
-    {
-        for (int i = 0; i < amountToPool; i++)
-        {
-            if (!pooledRollers[i].activeInHierarchy)
-            {
-                return pooledRollers[i];
-            }
-        }
-        return null;
-    }
-    
 }
