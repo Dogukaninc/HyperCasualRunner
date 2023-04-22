@@ -4,36 +4,38 @@ using UnityEngine;
 
 public class RollerManager : MonoBehaviour
 {
-    public List<GameObject> rollers = new List<GameObject>();
-    public List<GameObject> totalRollers = new List<GameObject>();
-    public int index = 0;
-    public Transform startPos;
-    public GameObject scoreBoard;
-    ArrowMovement arrowMovement;
-    private void Awake()
+
+    public static RollerManager rmanagerInstance;
+    public List<GameObject> pooledRollers;
+    public GameObject objectToPool;
+    public int amountToPool;
+
+    void Awake()
     {
-        GameObject temp = Instantiate(rollers[index], transform.position, Quaternion.identity);
-        totalRollers.Add(temp);
+        rmanagerInstance = this;
     }
-    private void Start()
+
+    void Start()
     {
-        arrowMovement = FindObjectOfType<ArrowMovement>();
-    }
-    public void LoadNextLevel()
-    {
-        GameObject rollerTemp = Instantiate(rollers[index + 1], transform.position, Quaternion.identity);
-        index++;
-        totalRollers.Add(rollerTemp);
-
-
-        if (index > 3) return;///ODEV ICIN
-
-        if (totalRollers.Count > 1)//listeden önceki seviyeyi siliyor
+        pooledRollers = new List<GameObject>();
+        GameObject tmp;
+        for (int i = 0; i < amountToPool; i++)
         {
-            Destroy(totalRollers[totalRollers.Count - 2]);
+            tmp = Instantiate(objectToPool);
+            tmp.SetActive(false);
+            pooledRollers.Add(tmp);
         }
-        arrowMovement.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        scoreBoard.SetActive(false);
-        arrowMovement.GetComponent<Transform>().transform.position = startPos.position;
     }
+    public GameObject GetPooledObject()
+    {
+        for (int i = 0; i < amountToPool; i++)
+        {
+            if (!pooledRollers[i].activeInHierarchy)
+            {
+                return pooledRollers[i];
+            }
+        }
+        return null;
+    }
+    
 }
