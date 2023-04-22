@@ -21,8 +21,13 @@ MonoBehaviour:
   m_ShowMode: 4
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Title: Hierarchy
   m_RootView: {fileID: 2}
+=======
+  m_Title: Scene
+  m_RootView: {fileID: 4}
+>>>>>>> parent of 1603c22 (homework)
 =======
   m_Title: Scene
   m_RootView: {fileID: 4}
@@ -42,6 +47,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_EditorHideFlags: 1
@@ -217,6 +223,8 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+=======
+>>>>>>> parent of 1603c22 (homework)
 =======
 >>>>>>> parent of 1603c22 (homework)
 =======
@@ -464,7 +472,11 @@ MonoBehaviour:
   vertical: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 141
+=======
+  controlID: 17
+>>>>>>> parent of 1603c22 (homework)
 =======
   controlID: 17
 >>>>>>> parent of 1603c22 (homework)
@@ -492,8 +504,13 @@ MonoBehaviour:
     height: 377.6
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> parent of 1603c22 (homework)
 =======
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
@@ -880,9 +897,15 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 15.359003, y: 4.965594, z: 31.54545}
     speed: 2
     m_Value: {x: 15.359003, y: 4.965594, z: 31.54545}
+=======
+    m_Target: {x: 6.93814, y: -8.117699, z: 6.9493427}
+    speed: 2
+    m_Value: {x: 6.93814, y: -8.117699, z: 6.9493427}
+>>>>>>> parent of 1603c22 (homework)
 =======
     m_Target: {x: 6.93814, y: -8.117699, z: 6.9493427}
     speed: 2
@@ -936,8 +959,11 @@ MonoBehaviour:
       m_Pivot: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_Size: {x: 1, y: 1}
 =======
+=======
+>>>>>>> parent of 1603c22 (homework)
 =======
 >>>>>>> parent of 1603c22 (homework)
       m_Size: {x: 0.10001, y: 0.10001}
@@ -956,6 +982,7 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
@@ -963,6 +990,15 @@ MonoBehaviour:
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: {x: 0.30709562, y: 0.19930361, z: -0.06593797, w: 0.9282458}
+    speed: 2
+    m_Value: {x: 0.3070929, y: 0.19930185, z: -0.06593739, w: 0.9282376}
+  m_Size:
+    m_Target: 15.541335
+    speed: 2
+    m_Value: 15.541335
+>>>>>>> parent of 1603c22 (homework)
 =======
     m_Target: {x: 0.30709562, y: 0.19930361, z: -0.06593797, w: 0.9282458}
     speed: 2
@@ -1070,7 +1106,11 @@ MonoBehaviour:
       m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ExpandedIDs: 2afbffff
+=======
+      m_ExpandedIDs: 2afbffff326b0000906b0000ae6b0000b66b0000e66b0000f06b0000f46b0000206c0000426c00005a6c0000646c00006e6c00007a6c0000
+>>>>>>> parent of 1603c22 (homework)
 =======
       m_ExpandedIDs: 2afbffff326b0000906b0000ae6b0000b66b0000e66b0000f06b0000f46b0000206c0000426c00005a6c0000646c00006e6c00007a6c0000
 >>>>>>> parent of 1603c22 (homework)
@@ -1144,7 +1184,11 @@ MonoBehaviour:
     m_Folders:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts
+=======
+    - Assets/Prefabs
+>>>>>>> parent of 1603c22 (homework)
 =======
     - Assets/Prefabs
 >>>>>>> parent of 1603c22 (homework)
@@ -1167,7 +1211,11 @@ MonoBehaviour:
     m_LastClickedID: 29040
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000f6720000f8720000fa720000fc720000fe7200000073000002730000
+=======
+    m_ExpandedIDs: 00000000687200006a7200006c7200006e720000707200007272000074720000
+>>>>>>> parent of 1603c22 (homework)
 =======
     m_ExpandedIDs: 00000000687200006a7200006c7200006e720000707200007272000074720000
 >>>>>>> parent of 1603c22 (homework)
@@ -1200,10 +1248,17 @@ MonoBehaviour:
   m_AssetTreeState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 209.80002}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff00000000f6720000f8720000fa720000fc720000fe7200000073000002730000
+=======
+    scrollPos: {x: 0, y: 265.80002}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff00000000687200006a7200006c7200006e720000707200007272000074720000c8720000
+>>>>>>> parent of 1603c22 (homework)
 =======
     scrollPos: {x: 0, y: 265.80002}
     m_SelectedIDs: 
