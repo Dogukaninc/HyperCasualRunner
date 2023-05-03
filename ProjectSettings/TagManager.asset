@@ -9,6 +9,7 @@ TagManager:
   - FinishLine
   - CirclePart
   - Part
+  - WeaponModel
   layers:
   - Default
   - TransparentFX
