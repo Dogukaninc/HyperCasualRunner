@@ -8,6 +8,12 @@ public class ArrowMovement : MonoBehaviour
     [SerializeField] private float arrowSpeed;
     GameManager gameManager;
     MenuManager menuManager;
+
+    [Header("Score")]
+    [Space(10)]
+    public int totalScore;
+
+
     void Start()
     {
         menuManager = FindObjectOfType<MenuManager>();
@@ -26,6 +32,12 @@ public class ArrowMovement : MonoBehaviour
         if (other.gameObject.CompareTag("FinishLine"))
         {
             gameManager.GameFinish();
+        }
+        if (other.gameObject.CompareTag("DartPiece"))
+        {
+            //Total score tahta parcasina carpinca arttir
+            totalScore += other.gameObject.GetComponent<PieceScoreValue>().scoreValue;
+            Debug.Log(totalScore);
         }
     }
     private void OnCollisionEnter(Collision collision)
