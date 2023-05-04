@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BottleRotation
   m_EditorClassIdentifier: 
   rotatingX: 0
-  rotatingY: 1
-  rotatingZ: 0
+  rotatingY: 0
+  rotatingZ: 1
