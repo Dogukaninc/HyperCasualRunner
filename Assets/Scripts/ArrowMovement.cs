@@ -37,7 +37,7 @@ public class ArrowMovement : MonoBehaviour
         {
             //Total score tahta parcasina carpinca arttir
             totalScore += other.gameObject.GetComponent<PieceScoreValue>().scoreValue;
-            Debug.Log(totalScore);
+            menuManager.SCORETEXT.text = "Score: " + totalScore.ToString();
         }
     }
     private void OnCollisionEnter(Collision collision)

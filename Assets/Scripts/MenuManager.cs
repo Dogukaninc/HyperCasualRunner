@@ -15,6 +15,14 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI weaponCostText;
 
     //[SerializeField] private bool itemEquippedAlready = false;
+
+    [Header("ScoreBoard")]
+    [Space(10)]
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    public TextMeshProUGUI SCORETEXT => scoreText;//encapsulation
+
+    [Space(10)]
     //public int weaponPrice;
     //private GameManager gameManager;
     [SerializeField] private GameObject menuPanel;

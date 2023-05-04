@@ -15,7 +15,7 @@ public class CollectableDiamond : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Arrow"))
+        if (other.gameObject.CompareTag("WeaponModel"))
         {
             GameManager.coinAmount++;
             AudioManager.instance.Play("Diamond");

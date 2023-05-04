@@ -7,7 +7,7 @@ public class BreakableObstacle : MonoBehaviour
     [SerializeField] private GameObject breakableObsPrefab;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Arrow"))
+        if (other.gameObject.CompareTag("WeaponModel"))
         {
             Instantiate(breakableObsPrefab, transform.position, Quaternion.identity);
 

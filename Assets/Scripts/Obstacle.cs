@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Arrow"))
+        if (collision.gameObject.CompareTag("WeaponModel"))
         {
             gameManager.GameOver();
         }
