@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
     }
     void Start()
     {
-        coinAmount = 4;
+        //coinAmount = 4;
         diamondText.text = coinAmount.ToString();
     }
     void Update()
