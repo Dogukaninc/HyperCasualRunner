@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class JsonController : MonoBehaviour
 {
-    public CharacterStats player = new CharacterStats("Dogukan", 45);
+    //public CharacterStats player = new CharacterStats("Dogukan", 45);
+    public GameManager gameManager;
+    //public GameManager gameManager = new GameManager();
     private void Start()
     {
         SaveData();
     }
     public void SaveData()
     {
-        string jsonString = JsonUtility.ToJson(player);
+        string jsonString = JsonUtility.ToJson(gameManager);
         File.WriteAllText(Application.dataPath + "/Saves/playerJson.json", jsonString);
     }
     public void LoadData()
@@ -21,7 +23,7 @@ public class JsonController : MonoBehaviour
         if (File.Exists(path))
         {
             string reader = File.ReadAllText(path);
-            player = JsonUtility.FromJson<CharacterStats>(reader);
+            gameManager = JsonUtility.FromJson<GameManager>(reader);
         }
         else
         {

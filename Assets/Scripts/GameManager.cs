@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance;
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button nextLevelButton;
     [SerializeField] private Transform startPos;
 
-    [SerializeField] public static int coinAmount;
+    [SerializeField] public int coinAmount;
     public bool isGameFinished = false;
     ArrowMovement arrowRef;
     private void Awake()
@@ -77,4 +77,13 @@ public class GameManager : MonoBehaviour
         finalPanel.gameObject.SetActive(true);
     }
 
+    public void LoadData(GameData data)
+    {
+        this.coinAmount = data.coinAmount;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.coinAmount = this.coinAmount;
+    }
 }

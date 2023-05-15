@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private RectTransform shopItemTransform;
     [SerializeField] private Sprite offSprite, onSprite;
     //public bool cameraCanFollow;
+    public GameManager gameManager;
     //[SerializeField] private GameObject mainCamera;
     public bool gameCanStart = false;
     public bool isOnisOf = false;
@@ -140,9 +141,9 @@ public class MenuManager : MonoBehaviour
     public void BuyWeaponButton()
     {
         var weaponItem = weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>();
-        if (weaponItem._weaponCost <= GameManager.coinAmount)
+        if (weaponItem._weaponCost <= gameManager.coinAmount)
         {
-            GameManager.coinAmount -= weaponItem._weaponCost;
+            gameManager.coinAmount -= weaponItem._weaponCost;
             weaponItem.isItemSold = true;
         }
     }

@@ -6725,6 +6725,7 @@ MonoBehaviour:
   finalPanel: {fileID: 678564000}
   nextLevelButton: {fileID: 636546769}
   startPos: {fileID: 1224343053}
+  coinAmount: 0
   isGameFinished: 0
 --- !u!4 &767731682
 Transform:
@@ -7211,7 +7212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1122598124
 Transform:
   m_ObjectHideFlags: 0
@@ -7239,9 +7240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbffe2a2ee5d3144a6a383934211739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player:
-    healthPoint: 45
-    characterName: Dogukan
+  gameManager: {fileID: 767731681}
 --- !u!1 &1155641392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8221,8 +8220,56 @@ MonoBehaviour:
   shopItemTransform: {fileID: 184394366}
   offSprite: {fileID: 21300000, guid: 5ddf1e3b454dc8b4a8547521c3ebc474, type: 3}
   onSprite: {fileID: 21300000, guid: 536e2b5dc1bc1de4d9d0abff5e09448d, type: 3}
+  gameManager: {fileID: 767731681}
   gameCanStart: 0
   isOnisOf: 0
+--- !u!1 &1862218272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862218274}
+  - component: {fileID: 1862218273}
+  m_Layer: 0
+  m_Name: DataPersistenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1862218273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862218272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c52ce80c840fc440b6f4b2a039a681d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: data.game
+  gameData:
+    coinAmount: 0
+--- !u!4 &1862218274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862218272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1874768059
 MonoBehaviour:
   m_ObjectHideFlags: 0
