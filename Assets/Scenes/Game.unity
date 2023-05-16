@@ -7196,51 +7196,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924324758}
   m_CullTransparentMesh: 1
---- !u!1 &1122598123
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1122598124}
-  - component: {fileID: 1122598125}
-  m_Layer: 0
-  m_Name: SaveSystemObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1122598124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122598123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1122598125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122598123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dbffe2a2ee5d3144a6a383934211739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 767731681}
 --- !u!1 &1155641392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8110,7 +8065,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -8255,6 +8210,9 @@ MonoBehaviour:
   fileName: data.game
   gameData:
     coinAmount: 0
+    weaponSold:
+      keys: []
+      values: 
 --- !u!4 &1862218274
 Transform:
   m_ObjectHideFlags: 0
@@ -8268,7 +8226,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1874768059
 MonoBehaviour:
@@ -9251,6 +9209,7 @@ MonoBehaviour:
   isItemSold: 0
   isItemEquipped: 0
   _weaponCost: 0
+  id: 1dcc6198-9306-4507-b211-df57cc69951c
 --- !u!1 &1196314422690028419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9588,6 +9547,7 @@ MonoBehaviour:
   isItemSold: 0
   isItemEquipped: 0
   _weaponCost: 0
+  id: c5dab31b-7f33-4a1f-bed8-949fa90ca043
 --- !u!33 &3469287837305820899
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9609,9 +9569,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCostScript: {fileID: 11400000, guid: da388c8267b5a834c8726e21788017c4, type: 2}
-  isItemSold: 0
+  isItemSold: 1
   isItemEquipped: 0
   _weaponCost: 0
+  id: ff76f72b-034a-4276-8f6e-73dec7d37da5
 --- !u!33 &3469287837676102063
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9633,9 +9594,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCostScript: {fileID: 11400000, guid: ddf2d7200f06da94a90a6bda2edb7810, type: 2}
-  isItemSold: 0
+  isItemSold: 1
   isItemEquipped: 0
   _weaponCost: 0
+  id: e7c1237c-735a-45b5-a956-476254fa8fca
 --- !u!33 &3523012000315850640
 MeshFilter:
   m_ObjectHideFlags: 0

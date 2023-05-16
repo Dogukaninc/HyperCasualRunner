@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         finalPanel.gameObject.SetActive(true);
     }
 
+    //Save and Load data
     public void LoadData(GameData data)
     {
         this.coinAmount = data.coinAmount;
