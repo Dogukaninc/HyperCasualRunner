@@ -6,6 +6,5 @@ using UnityEngine;
 public class WeaponsCostSO : ScriptableObject
 {
     public int weaponCost;
-    public bool itemSold = false;
     public bool itemEquipped = false;
 }

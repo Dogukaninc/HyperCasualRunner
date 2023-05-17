@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class MenuManager : MonoBehaviour, IDataPersistence
+public class MenuManager : MonoBehaviour
 {
     [SerializeField] private int gunCount = 0;
     public List<GameObject> weapons = new List<GameObject>();
@@ -149,27 +149,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     }
 
 
-
-    //Çalýþmýyor scriptble objeler için kayýta bak!!
-    public void LoadData(GameData data)
-    {
-        var weaponItem = weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>();
-
-        data.weaponSold.TryGetValue(weaponItem.id, out weaponItem.isItemSold);
-        //if (weaponItem.isItemSold)
-        //{
-        //    //satýn alma butonunu kapat
-        //}
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        var weaponItem = weapons[gunCount].gameObject.GetComponent<WeaponTypeHolder>();
-        if (data.weaponSold.ContainsKey(weaponItem.id))
-        {
-            data.weaponSold.Remove(weaponItem.id);
-        }
-        data.weaponSold.Add(weaponItem.id, weaponItem.isItemSold);
-
-    }
+    //Çalýþmýyor scriptble objeler için kayýta bak!! wepaon type holder a taþý
+    
 }

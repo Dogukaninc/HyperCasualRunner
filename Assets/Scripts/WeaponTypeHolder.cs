@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class WeaponTypeHolder : MonoBehaviour
+public class WeaponTypeHolder : MonoBehaviour, IDataPersistence
 {
     public WeaponsCostSO weaponCostScript;
     public bool isItemSold;
@@ -20,9 +20,28 @@ public class WeaponTypeHolder : MonoBehaviour
     private void Awake()
     {
         _weaponCost = weaponCostScript.weaponCost;
-        isItemSold = weaponCostScript.itemSold;
         isItemEquipped = weaponCostScript.itemEquipped;
     }
+    public void LoadData(GameData data)
+    {
+        var weaponItem = this.gameObject.GetComponent<WeaponTypeHolder>();
 
+        data.weaponSold.TryGetValue(weaponItem.id, out weaponItem.isItemSold);
+        //if (weaponItem.isItemSold)
+        //{
+        //    //satýn alma butonunu kapat
+        //}
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        var weaponItem = this.gameObject.GetComponent<WeaponTypeHolder>();
+        if (data.weaponSold.ContainsKey(weaponItem.id))
+        {
+            data.weaponSold.Remove(weaponItem.id);
+        }
+        data.weaponSold.Add(weaponItem.id, weaponItem.isItemSold);
+
+    }
 
 }

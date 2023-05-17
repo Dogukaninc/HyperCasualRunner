@@ -9569,7 +9569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCostScript: {fileID: 11400000, guid: da388c8267b5a834c8726e21788017c4, type: 2}
-  isItemSold: 1
+  isItemSold: 0
   isItemEquipped: 0
   _weaponCost: 0
   id: ff76f72b-034a-4276-8f6e-73dec7d37da5
@@ -9594,7 +9594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCostScript: {fileID: 11400000, guid: ddf2d7200f06da94a90a6bda2edb7810, type: 2}
-  isItemSold: 1
+  isItemSold: 0
   isItemEquipped: 0
   _weaponCost: 0
   id: e7c1237c-735a-45b5-a956-476254fa8fca
